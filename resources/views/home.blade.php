@@ -10,6 +10,8 @@
 <!-- cara penulisan isi section yang panjang -->
 @section('konten')
 
+@vite(['resources/css/app.css', 'resources/js/app.jsx'])
+
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
 	<h1 class="h3 mb-0 text-gray-800">Selamat Datang !</h1>
 </div>
@@ -20,6 +22,8 @@
 	<!-- Earnings (Monthly) Card Example -->
 	<div class="col-md-12 col-md-12 mb-4">
 		<div class="card border-left shadow h-100 py-2">
+			<div id="app"></div>
+
 			<div class="card-body d-flex">
 				<div class="card">
 					<div class="card-body">
