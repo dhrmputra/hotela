@@ -22,7 +22,7 @@
         <div class="card border-left shadow h-100 py-2">
             <div class="card-body">
                 <div class="text-center mb-4">
-                    <a href="/hotela/kamar/tambah" class="btn btn-primary">Tambah</a>
+                    <a href="/kamar/tambah" class="btn btn-primary">Tambah</a>
                 </div>
                 <table class="table border-4 w-100 m-auto table-striped">
                     <thead class="bg-primary text-white">
@@ -48,9 +48,9 @@
                             <td>{{ $p->deskripsi }}</td>
                             <td>{{ $p->status }}</td>
                             <td>
-                                <a href="/hotela/kamar/edit/{{ $p->id_kamar }}" class="btn btn-warning">Edit</a>
+                                <a href="/kamar/edit/{{ $p->id_kamar }}" class="btn btn-warning">Edit</a>
                                 |
-                                <a href="/hotela/kamar/hapus/{{ $p->id_kamar }}" class="btn btn-danger">Hapus</a>
+                                <a href="/kamar/hapus/{{ $p->id_kamar }}" class="btn btn-danger">Hapus</a>
                             </td>
                         </tr>
                         @endforeach

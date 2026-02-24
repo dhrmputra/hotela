@@ -21,12 +21,12 @@
     <div class="col-md-12 col-md-12 mb-4">
         <div class="card border-left shadow h-100 py-2">
             <div class="card-body">
-                <a href="/hotela/pesanan" class="btn btn-primary">Kembali</a>
+                <a href="/pesanan" class="btn btn-primary">Kembali</a>
                 <br />
                 <br />
 
                 @foreach($pesanan as $p)
-                <form method="post" action="/hotela/pesanan/update">
+                <form method="post" action="/pesanan/update">
                     {{ csrf_field() }}
                     <input type="hidden" name="id_pesanan" value="{{ $p->id_pesanan }}"> 
                     <div class="form-group">

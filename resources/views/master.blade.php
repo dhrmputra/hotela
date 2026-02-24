@@ -30,7 +30,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/hotela">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -42,7 +42,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="/hotela">
+                <a class="nav-link" href="">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -57,25 +57,25 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="/hotela/kamar">
+                <a class="nav-link" href="/kamar">
                     <i class="fa fa-bed"></i>
                     <span>Kamar</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/hotela/user">
+                <a class="nav-link" href="/user">
                     <i class="fa fa-user"></i>
                     <span>User</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/hotela/pesanan">
+                <a class="nav-link" href="/pesanan">
                     <i class="fa fa-file"></i>
                     <span>Pesanan</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/hotela/pegawai">
+                <a class="nav-link" href="/pegawai">
                     <i class="fa fa-file"></i>
                     <span>pegawai</span>
                 </a>

@@ -21,11 +21,11 @@
     <div class="col-md-12 col-md-12 mb-4">
         <div class="card border-left shadow h-100 py-2">
             <div class="card-body">
-                <a href="/hotela/user" class="btn btn-primary">Kembali</a>
+                <a href="/user" class="btn btn-primary">Kembali</a>
                 <br />
                 <br />
 
-                <form method="post" action="/hotela/user/store">
+                <form method="post" action="/user/store">
 
                     {{ csrf_field() }}
 

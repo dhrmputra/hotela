@@ -9,10 +9,6 @@ use Illuminate\Support\Collection;
 
 class HotelController extends Controller
 {
-    public function home()
-    {
-        return view('home');
-    }
     public function index()
     {
         $kamar = DB::table('kamar')->count();
@@ -71,7 +67,7 @@ class HotelController extends Controller
             'deskripsi' => $request->deskripsi,
             'status' => $request->status
         ]);
-        return redirect('/hotela/kamar');
+        return redirect('/kamar');
     }
     public function pegawaistore(Request $request)
     {
@@ -81,7 +77,7 @@ class HotelController extends Controller
             'alamat' => $request->alamat,
             'jabatan' => $request->jabatan,
         ]);
-        return redirect('/hotela/kamar');
+        return redirect('/kamar');
     }
     public function userstore(Request $request)
     {
@@ -94,7 +90,7 @@ class HotelController extends Controller
             'alamat' => $request->alamat,
             'status' => $request->status
         ]);
-        return redirect('/hotela/user');
+        return redirect('/user');
     }
     public function pesananstore(Request $request)
     {
@@ -106,7 +102,7 @@ class HotelController extends Controller
             'waktu_selesai' => $request->waktu_selesai,
             'keterangan' => $request->keterangan,
         ]);
-        return redirect('/hotela/pesanan');
+        return redirect('/pesanan');
     }
     public function kamaredit($id)
     {
@@ -138,7 +134,7 @@ class HotelController extends Controller
             'deskripsi' => $request->deskripsi,
             'status' => $request->status
         ]);
-        return redirect('/hotela/kamar');
+        return redirect('/kamar');
     }
     public function pegawaiupdate(Request $request)
     {
@@ -148,7 +144,7 @@ class HotelController extends Controller
             'alamat' => $request->alamat,
             'jabatan' => $request->jabatan,
         ]);
-        return redirect('/hotela/pegawai');
+        return redirect('/pegawai');
     }
 
     public function userupdate(Request $request)
@@ -162,7 +158,7 @@ class HotelController extends Controller
             'alamat' => $request->alamat,
             'status' => $request->status
         ]);
-        return redirect('/hotela/user');
+        return redirect('/user');
     }
 
     public function pesananupdate(Request $request)
@@ -175,27 +171,27 @@ class HotelController extends Controller
             'waktu_selesai' => $request->waktu_selesai,
             'keterangan' => $request->keterangan,
         ]);
-        return redirect('/hotela/pesanan');
+        return redirect('/pesanan');
     }
 
     public function kamarhapus($id)
     {
         DB::table('kamar')->where('id_kamar', $id)->delete();
-        return redirect('/hotela/kamar');
+        return redirect('/kamar');
     }
     public function pegawaihapus($id)
     {
         DB::table('kamar')->where('id_pegawai', $id)->delete();
-        return redirect('/hotela/pegawai');
+        return redirect('/pegawai');
     }
     public function userhapus($id)
     {
         DB::table('user')->where('id_user', $id)->delete();
-        return redirect('/hotela/user');
+        return redirect('/user');
     }
     public function pesananhapus($id)
     {
         DB::table('pesanan')->where('id_pesanan', $id)->delete();
-        return redirect('/hotela/pesanan');
+        return redirect('/pesanan');
     }
 }

@@ -25,28 +25,28 @@
 					<div class="card-body">
 						<h5 class="card-title text-center">Total Kamar</h5>
 						<p class="card-text text-center fs-4">{{ $kamar }}</p>
-						<a href="/hotela/kamar" class="btn btn-primary">More Details</a>
+						<a href="/kamar" class="btn btn-primary">More Details</a>
 					</div>
 				</div>
 				<div class="card mx-4">
 					<div class="card-body">
 						<h5 class="card-title text-center">Total User</h5>
 						<p class="card-text text-center fs-4">{{ $user }}</p>
-						<a href="/hotela/user" class="btn btn-primary">More Details</a>
+						<a href="/user" class="btn btn-primary">More Details</a>
 					</div>
 				</div>
 				<div class="card">
 					<div class="card-body">
 						<h5 class="card-title text-center">Total Pesanan</h5>
 						<p class="card-text text-center fs-4">{{ $pesanan }}</p>
-						<a href="/hotela/pesanan" class="btn btn-primary">More Details</a>
+						<a href="/pesanan" class="btn btn-primary">More Details</a>
 					</div>
 				</div>
 				<div class="card">
 					<div class="card-body">
 						<h5 class="card-title text-center">Total pegawai</h5>
 						<p class="card-text text-center fs-4">{{ $pesanan }}</p>
-						<a href="/hotela/pegawai" class="btn btn-primary">More Details</a>
+						<a href="/pegawai" class="btn btn-primary">More Details</a>
 					</div>
 				</div>
 			</div>
