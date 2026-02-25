@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Hotel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class HotelController extends Controller
 {
@@ -14,9 +16,11 @@ class HotelController extends Controller
         $kamar = DB::table('kamar')->count();
         $user = DB::table('user')->count();
         $pesanan = DB::table('pesanan')->count();
+        $pegawai = DB::table('pegawai')->count();
 
-        return view('home', compact('kamar', 'user', 'pesanan'));
+        return view('home', compact('kamar', 'user', 'pesanan','pegawai'));
     }
+    
     public function kamar()
     {
         $kamar = DB::table('kamar')->get();
@@ -49,10 +53,10 @@ class HotelController extends Controller
     {
         return view('user_tambah');
     }
-    public function pegawaitambah()
-    {
-        return view('pegawai_tambah');
-    }
+    // public function pegawaitambah()
+    // {
+    //     return view('pegawai_tambah');
+    // }
     public function pesanantambah()
     {
         return view('pesanan_tambah');
@@ -77,8 +81,23 @@ class HotelController extends Controller
             'alamat' => $request->alamat,
             'jabatan' => $request->jabatan,
         ]);
-        return redirect('/kamar');
+        return redirect('/pegawai');
     }
+
+    public function pegawaitambah()
+{
+    return view('pegawai_form');
+}
+
+public function pegawaiedit($id)
+{
+    $pegawai = DB::table('pegawai')
+        ->where('id_pegawai', $id)
+        ->first();
+
+    return view('pegawai_form', compact('pegawai'));
+
+}
     public function userstore(Request $request)
     {
         DB::table('user')->insert([
@@ -114,11 +133,11 @@ class HotelController extends Controller
         $user = DB::table('user')->where('id_user', $id)->get();
         return view('user_edit', ['user' => $user]);
     }
-    public function pegawaiedit($id)
-    {
-        $user = DB::table('pegawai')->where('id_pegawai', $id)->get();
-        return view('pegawai_edit', ['pegawai' => $user]);
-    }
+    // public function pegawaiedit($id)
+    // {
+    //     $user = DB::table('pegawai')->where('id_pegawai', $id)->get();
+    //     return view('pegawai_edit', ['pegawai' => $user]);
+    // }
     public function pesananedit($id)
     {
         $pesanan = DB::table('pesanan')->where('id_pesanan', $id)->get();
@@ -138,7 +157,7 @@ class HotelController extends Controller
     }
     public function pegawaiupdate(Request $request)
     {
-        DB::table('pegawai')->where('id_pegawai', $request->id_kamar)->update([
+        DB::table('pegawai')->where('id_pegawai', $request->id_pegawai)->update([
             'nama_pegawai' => $request->nama_pegawai,
             'umur' => $request->umur,
             'alamat' => $request->alamat,
@@ -181,7 +200,7 @@ class HotelController extends Controller
     }
     public function pegawaihapus($id)
     {
-        DB::table('kamar')->where('id_pegawai', $id)->delete();
+        DB::table('pegawai')->where('id_pegawai', $id)->delete();
         return redirect('/pegawai');
     }
     public function userhapus($id)
@@ -194,4 +213,35 @@ class HotelController extends Controller
         DB::table('pesanan')->where('id_pesanan', $id)->delete();
         return redirect('/pesanan');
     }
+    
+    public function login()
+{
+    return view('login');
 }
+
+public function loginProcess(Request $request)
+{
+    $pegawai = DB::table('pegawai')
+        ->where('username', $request->username)
+        ->where('password', $request->password)
+        ->first();
+
+    if (!$pegawai) {
+        return back()->with('error', 'Username atau password salah');
+    }
+
+    session([
+        'login' => true,
+        'pegawai_id' => $pegawai->id_pegawai,
+        'pegawai_nama' => $pegawai->nama_pegawai,
+    ]);
+
+    return redirect('/');
+}  
+    public function logout()
+{
+    Session::flush();
+    return redirect('/login');
+    }
+}
+
