@@ -359,7 +359,42 @@ INSERT INTO `waktu` (`id_waktu`, `hari`, `kuartal`, `bulan`, `tahun`) VALUES
 --
 -- Indexes for dumped tables
 --
+-- --------------------------------------------------------
+--
+-- Struktur dari tabel `pegawai`
+--
+CREATE TABLE `pegawai` (
+  `id_pegawai` int(11) NOT NULL,
+  `nama_pegawai` varchar(255) DEFAULT NULL,
+  `umur` int(11) DEFAULT NULL,
+  `alamat` varchar(255) DEFAULT NULL,
+  `jabatan` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+--
+-- Dumping data untuk tabel `pegawai`
+--
+INSERT INTO `pegawai` (`id_pegawai`, `nama_pegawai`, `umur`, `alamat`, `jabatan`) VALUES
+(1, 'I Made Agus', 30, 'Denpasar', 'Manager'),
+(2, 'Ni Luh Sari', 25, 'Badung', 'Resepsionis'),
+(3, 'I Wayan Putra', 28, 'Gianyar', 'Housekeeping'),
+(4, 'Ni Komang Ayu', 27, 'Tabanan', 'Admin'),
+(5, 'I Ketut Dana', 35, 'Bangli', 'Security');
+
+-- --------------------------------------------------------
+--
+-- Indexes for table `pegawai`
+--
+ALTER TABLE `pegawai`
+  ADD PRIMARY KEY (`id_pegawai`);
+
+-- --------------------------------------------------------
+--
+-- AUTO_INCREMENT for table `pegawai`
+--
+ALTER TABLE `pegawai`
+  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Indeks untuk tabel `kamar`
 --

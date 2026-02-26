@@ -52,3 +52,31 @@ Route::post('pegawai/store', [HotelController::class, 'pegawaistore']);
 Route::get('pegawai/edit/{id_pegawai}', [HotelController::class, 'pegawaiedit']);
 Route::post('pegawai/update', [HotelController::class, 'pegawaiupdate']);
 Route::get('pegawai/hapus/{id_pegawai}', [HotelController::class, 'pegawaihapus']);
+
+
+Route::get('/login', [HotelController::class, 'login'])->middleware('guest');
+Route::post('/login', [HotelController::class, 'loginProcess']);
+Route::get('/logout', [HotelController::class, 'logout']);
+
+Route::middleware('auth.pegawai')->group(function () {
+
+    Route::get('/', [HotelController::class, 'index']);
+
+    Route::get('kamar', [HotelController::class, 'kamar']);
+    Route::get('kamar/tambah', [HotelController::class, 'kamartambah']);
+    Route::post('kamar/store', [HotelController::class, 'kamarstore']);
+
+    Route::get('user', [HotelController::class, 'user']);
+    Route::get('user/tambah', [HotelController::class, 'usertambah']);
+    Route::post('user/store', [HotelController::class, 'userstore']);
+
+    Route::get('pesanan', [HotelController::class, 'pesanan']);
+    Route::get('pesanan/tambah', [HotelController::class, 'pesanantambah']);
+    Route::post('pesanan/store', [HotelController::class, 'pesananstore']);
+
+    Route::get('pegawai', [HotelController::class, 'pegawai']);
+    Route::get('pegawai/tambah', [HotelController::class, 'pegawaitambah']);
+    Route::post('pegawai/store', [HotelController::class, 'pegawaistore']);
+
+    Route::get('/logout', [HotelController::class, 'logout']);
+});
