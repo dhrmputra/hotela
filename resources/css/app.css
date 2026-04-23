@@ -3,3 +3,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* MOBILE SIDEBAR */
+/* MOBILE SIDEBAR FIX */
+@media (max-width: 768px) {
+  #accordionSidebar {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    width: 260px;
+    height: 100vh;
+    z-index: 1050;
+    transition: all 0.3s ease;
+  }
+
+  #accordionSidebar.toggled {
+    left: 0;
+  }
+
+  #content-wrapper {
+    margin-left: 0 !important;
+  }
+}
+.nav-link {
+  @apply text-white font-bold transition-colors duration-300 hover:text-amber-600;
+}

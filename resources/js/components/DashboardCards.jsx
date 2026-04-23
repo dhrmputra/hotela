@@ -1,6 +1,6 @@
 import { Users, BedDouble, ClipboardList, UserCog } from "lucide-react";
 
-export default function DashboardCards({ kamar, user, pesanan }) {
+export default function DashboardCards({ kamar, user, pesanan,  pegawai }) {
   const cards = [
     {
       title: "Total Kamar",
@@ -23,22 +23,22 @@ export default function DashboardCards({ kamar, user, pesanan }) {
       link: "/pesanan",
       color: "bg-purple-500",
     },
-    // {
-    //   title: "Total Pegawai",
-    //   value: pegawai,
-    //   icon: UserCog,
-    //   link: "/pegawai",
-    //   color: "bg-orange-500",
-    // },
+    {
+      title: "Total Pegawai",
+      value: pegawai,
+      icon: UserCog,
+      link: "/pegawai",
+      color: "bg-orange-500",
+    },
   ];
 
   return (
     <div className="px-4 md:px-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-4">
         {cards.map((card, index) => (
           <div
             key={index}
-            className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-5"
+            className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-5 opacity-90 hover:opacity-100"
           >
             <div className="flex items-center justify-between">
               <div>

@@ -24,7 +24,7 @@
                 <div class="text-center mb-4">
                     <a href="/kamar/tambah" class="btn btn-primary">Tambah</a>
                 </div>
-                <table class="table border-4 w-100 m-auto table-striped">
+                <table class="table w-100 m-auto table-striped">
                     <thead class="bg-primary text-white">
                         <tr>
                             <td>id</td>
@@ -56,4 +56,8 @@
                         @endforeach
                     </tbody>
                 </table>
+                </div>
+            </div>
+        </div>
+    </div>
                 @endsection

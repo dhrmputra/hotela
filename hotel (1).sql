@@ -304,10 +304,10 @@ INSERT INTO `tr_pesanan` (`id_pesanan`, `id_kamar`, `id_user`, `id_waktu`, `lama
 
 CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
-  `username` varchar(255) DEFAULT NULL,
+  `username` varchar(255) UNIQUE,
   `password` varchar(255) DEFAULT NULL,
   `nama` varchar(255) DEFAULT NULL,
-  `jabatan` varchar(255) DEFAULT NULL,
+  `email` varchar(255) UNIQUE,
   `telp` varchar(20) DEFAULT NULL,
   `alamat` varchar(255) DEFAULT NULL,
   `KTP` varchar(255) DEFAULT NULL,
@@ -319,17 +319,17 @@ CREATE TABLE `user` (
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id_user`, `username`, `password`, `nama`, `jabatan`, `telp`, `alamat`, `KTP`, `foto`, `status`) VALUES
-(1, 'Komeng', 'kominggay', 'Ladusigh', 'member party gay', '0869696969', 'Jl. Danau Tempe no.69', '-', '-', 1),
-(2, 'Lok', 'alitlok', 'Alit', 'petugas', '0812121212', 'Jl. Tukad pakerisan no.87', '-', '-', 1),
-(3, 'Tole', 'anggatole', 'Angga', 'pengangguran', '0834343434', 'Jl. Tukad Barito no.19', '-', '-', 1),
-(4, 'Dharmo', 'dharmomo', 'dharma', 'admin', '0856565656', 'Jl. Tukad Citarum no.21', '-', '-', 1),
-(5, 'Didok', 'didokrawr', 'dwipayana', 'pelanggan setia', '0878787878', 'Jl. Tukad Batanghari no.22', '-', '-', 1),
-(6, 'Soho', 'soho123', 'Putra', 'member party gay', '0823232323', 'Jl. Danau Batur no.69', '-', '-', 1),
-(7, 'Sengap', 'sengap78', 'Agus', 'petugas', '0845454545', 'Jl. Tukad badung no.87', '-', '-', 1),
-(8, 'Gembul', 'gembul96', 'Wira', 'pengangguran', '0867676767', 'Jl. Tukad pancoran no.19', '-', '-', 1),
-(9, 'Wibudi', 'budi87', 'Budi', 'admin', '0889898989', 'Jl. Tukad badung no.21', '-', '-', 1),
-(10, 'Mangku', 'mangku19', 'merta', 'pelanggan setia', '0810101010', 'Jl. Tukad citarum no.22', '-', '-', 1);
+INSERT INTO `user` (`id_user`, `username`, `password`, `nama`, `email`, `telp`, `alamat`, `KTP`, `foto`, `status`) VALUES
+(1, 'Komeng', 'kominggay', 'Ladusigh', 'komeng@gmail.com', '0869696969', 'Jl. Danau Tempe no.69', '-', '-', 1),
+(2, 'Lok', 'alitlok', 'Alit', 'lok@gmail.com', '0812121212', 'Jl. Tukad pakerisan no.87', '-', '-', 1),
+(3, 'Tole', 'anggatole', 'Angga', 'tole@gmail.com', '0834343434', 'Jl. Tukad Barito no.19', '-', '-', 1),
+(4, 'Dharmo', 'dharmomo', 'dharma', 'dharmo@gmail.com', '0856565656', 'Jl. Tukad Citarum no.21', '-', '-', 1),
+(5, 'Didok', 'didokrawr', 'dwipayana', 'didok@gmail.com', '0878787878', 'Jl. Tukad Batanghari no.22', '-', '-', 1),
+(6, 'Soho', 'soho123', 'Putra', 'soho@gmail.com', '0823232323', 'Jl. Danau Batur no.69', '-', '-', 1),
+(7, 'Sengap', 'sengap78', 'Agus', 'sengap@gmail.com', '0845454545', 'Jl. Tukad badung no.87', '-', '-', 1),
+(8, 'Gembul', 'gembul96', 'Wira', 'gembul@gmail.com', '0867676767', 'Jl. Tukad pancoran no.19', '-', '-', 1),
+(9, 'Wibudi', 'budi87', 'Budi', 'wibudi@gmail.com', '0889898989', 'Jl. Tukad badung no.21', '-', '-', 1),
+(10, 'Mangku', 'mangku19', 'merta', 'mangku@gmail.com', '0810101010', 'Jl. Tukad citarum no.22', '-', '-', 1);
 
 -- --------------------------------------------------------
 
@@ -366,6 +366,8 @@ INSERT INTO `waktu` (`id_waktu`, `hari`, `kuartal`, `bulan`, `tahun`) VALUES
 CREATE TABLE `pegawai` (
   `id_pegawai` int(11) NOT NULL,
   `nama_pegawai` varchar(255) DEFAULT NULL,
+  `username` varchar(50) UNIQUE,
+  `password` varchar(255) DEFAULT NULL,
   `umur` int(11) DEFAULT NULL,
   `alamat` varchar(255) DEFAULT NULL,
   `jabatan` varchar(100) DEFAULT NULL
@@ -375,12 +377,12 @@ CREATE TABLE `pegawai` (
 --
 -- Dumping data untuk tabel `pegawai`
 --
-INSERT INTO `pegawai` (`id_pegawai`, `nama_pegawai`, `umur`, `alamat`, `jabatan`) VALUES
-(1, 'I Made Agus', 30, 'Denpasar', 'Manager'),
-(2, 'Ni Luh Sari', 25, 'Badung', 'Resepsionis'),
-(3, 'I Wayan Putra', 28, 'Gianyar', 'Housekeeping'),
-(4, 'Ni Komang Ayu', 27, 'Tabanan', 'Admin'),
-(5, 'I Ketut Dana', 35, 'Bangli', 'Security');
+INSERT INTO `pegawai` (`id_pegawai`, `nama_pegawai`, `username`, `password`, `umur`, `alamat`, `jabatan`) VALUES
+(1, 'I Made Agus','admin', '123', 30, 'Denpasar', 'Manager'),
+(2, 'Ni Luh Sari', 'sari123', 'password456', 25, 'Badung', 'Resepsionis'),
+(3, 'I Wayan Putra', 'putra123', 'password789', 28, 'Gianyar', 'Housekeeping'),
+(4, 'Ni Komang Ayu', 'ayu123', 'password012', 27, 'Tabanan', 'Admin'),
+(5, 'I Ketut Dana', 'dana123', 'password345', 35, 'Bangli', 'Security');
 
 -- --------------------------------------------------------
 --

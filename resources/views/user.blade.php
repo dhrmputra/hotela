@@ -23,7 +23,7 @@
                 <div class="text-center mb-4">
                     <a href="/user/tambah" class="btn btn-primary">Tambah</a>
                 </div>
-                <table class="table border-4 w-100 m-auto table-striped">
+                <table class="table w-100 m-auto table-striped">
                     <thead class="bg-primary text-white">
                         <tr>
                             <td>id</td>
@@ -44,7 +44,7 @@
                             <td>{{ $p->username }}</td>
                             <td>{{ $p->password }}</td>
                             <td>{{ $p->nama }}</td>
-                            <td>{{ $p->jabatan }}</td>
+                            <td>{{ $p->email }}</td>
                             <td>{{ $p->telp }}</td>
                             <td>{{ $p->alamat }}</td>
                             <td>{{ $p->status }}</td>

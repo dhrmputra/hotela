@@ -45,8 +45,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Jabatan</label>
-                        <input type="text" name="jabatan" required="required" class="form-control" placeholder="jabatan" value=" {{ $p->jabatan }}">
+                        <label>Email</label>
+                        <input type="text" name="email" required="required" class="form-control" placeholder="Email" value=" {{ $p->email }}">
                     </div>
 
                     <div class="form-group">

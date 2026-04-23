@@ -16,9 +16,9 @@ class HotelController extends Controller
         $kamar = DB::table('kamar')->count();
         $user = DB::table('user')->count();
         $pesanan = DB::table('pesanan')->count();
-        $pegawai = DB::table('pegawai')->count();
+        $pegawai = DB::table('pegawai')->distinct()->count('id_pegawai');
 
-        return view('home', compact('kamar', 'user', 'pesanan','pegawai'));
+        return view('home', compact('kamar', 'user', 'pesanan', 'pegawai'));
     }
     
     public function kamar()
@@ -71,7 +71,7 @@ class HotelController extends Controller
             'deskripsi' => $request->deskripsi,
             'status' => $request->status
         ]);
-        return redirect('/kamar');
+        return redirect('/admin/kamar');
     }
     public function pegawaistore(Request $request)
     {
@@ -81,7 +81,7 @@ class HotelController extends Controller
             'alamat' => $request->alamat,
             'jabatan' => $request->jabatan,
         ]);
-        return redirect('/pegawai');
+        return redirect('/admin/pegawai');
     }
 
     public function pegawaitambah()
@@ -109,7 +109,7 @@ public function pegawaiedit($id)
             'alamat' => $request->alamat,
             'status' => $request->status
         ]);
-        return redirect('/user');
+        return redirect('/admin/user');
     }
     public function pesananstore(Request $request)
     {
@@ -121,7 +121,7 @@ public function pegawaiedit($id)
             'waktu_selesai' => $request->waktu_selesai,
             'keterangan' => $request->keterangan,
         ]);
-        return redirect('/pesanan');
+        return redirect('/admin/pesanan');
     }
     public function kamaredit($id)
     {
@@ -153,7 +153,7 @@ public function pegawaiedit($id)
             'deskripsi' => $request->deskripsi,
             'status' => $request->status
         ]);
-        return redirect('/kamar');
+        return redirect('/admin/kamar');
     }
     public function pegawaiupdate(Request $request)
     {
@@ -163,7 +163,7 @@ public function pegawaiedit($id)
             'alamat' => $request->alamat,
             'jabatan' => $request->jabatan,
         ]);
-        return redirect('/pegawai');
+        return redirect('/admin/pegawai');
     }
 
     public function userupdate(Request $request)
@@ -177,7 +177,7 @@ public function pegawaiedit($id)
             'alamat' => $request->alamat,
             'status' => $request->status
         ]);
-        return redirect('/user');
+        return redirect('/admin/user');
     }
 
     public function pesananupdate(Request $request)
@@ -190,28 +190,28 @@ public function pegawaiedit($id)
             'waktu_selesai' => $request->waktu_selesai,
             'keterangan' => $request->keterangan,
         ]);
-        return redirect('/pesanan');
+        return redirect('/admin/pesanan');
     }
 
     public function kamarhapus($id)
     {
         DB::table('kamar')->where('id_kamar', $id)->delete();
-        return redirect('/kamar');
+        return redirect('/admin/kamar');
     }
     public function pegawaihapus($id)
     {
         DB::table('pegawai')->where('id_pegawai', $id)->delete();
-        return redirect('/pegawai');
+        return redirect('/admin/pegawai');
     }
     public function userhapus($id)
     {
         DB::table('user')->where('id_user', $id)->delete();
-        return redirect('/user');
+        return redirect('/admin/user');
     }
     public function pesananhapus($id)
     {
         DB::table('pesanan')->where('id_pesanan', $id)->delete();
-        return redirect('/pesanan');
+        return redirect('/admin/pesanan');
     }
     
     public function login()
@@ -234,10 +234,12 @@ public function loginProcess(Request $request)
         'login' => true,
         'pegawai_id' => $pegawai->id_pegawai,
         'pegawai_nama' => $pegawai->nama_pegawai,
+        'last_activity' => time()
     ]);
 
-    return redirect('/');
-}  
+    return redirect('/admin');
+}
+
     public function logout()
 {
     Session::flush();

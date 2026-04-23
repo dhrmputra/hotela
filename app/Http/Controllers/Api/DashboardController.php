@@ -17,7 +17,7 @@ class DashboardController extends HotelController
             'kamar'   => Kamar::count(),
             'user'    => User::count(),
             'pesanan' => Pesanan::count(),
-            'pegawai' => Pesanan::count(),
+            'pegawai' => Pegawai::count(),
         ]);
     }
 }

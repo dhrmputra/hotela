@@ -10,7 +10,6 @@
         "@testing-library/react": "^16.3.2",
         "@vitejs/plugin-react": "^5.1.4",
         "axios": "^1.1.2",
-<<<<<<< HEAD
         "jsdom": "^28.1.0",
         "laravel-vite-plugin": "^2.1.0",
         "vite": "^7.3.1",
@@ -18,26 +17,18 @@
     },
     "dependencies": {
         "@tailwindcss/vite": "^4.2.1",
+        "animate.css": "^4.1.1",
+        "aos": "^3.0.0-beta.6",
         "chart.js": "^4.5.1",
-        "react": "^19.2.4",
-        "react-chartjs-2": "^5.3.1",
-        "react-dom": "^19.2.4",
-        "tailwindcss": "^4.2.1"
-=======
-        "laravel-vite-plugin": "^2.1.0",
-        "vite": "^7.3.1"
-<<<<<<< HEAD
->>>>>>> 5b08064 (revisi pt 1)
-=======
-    },
-    "dependencies": {
-        "@tailwindcss/vite": "^4.2.1",
-        "chart.js": "^4.5.1",
+        "flowbite": "^4.0.1",
+        "flowbite-react": "^0.12.17",
         "lucide-react": "^0.575.0",
         "react": "^19.2.4",
         "react-chartjs-2": "^5.3.1",
         "react-dom": "^19.2.4",
+        "react-phone-input-2": "^2.15.1",
+        "react-router-dom": "^7.13.1",
+        "remixicon": "^4.9.1",
         "tailwindcss": "^4.2.1"
->>>>>>> 4db0388b08433d52629b42c82421069dff276c82
     }
 }

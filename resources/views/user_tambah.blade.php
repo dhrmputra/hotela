@@ -46,7 +46,7 @@
 
                     <div class="form-group">
                         <label>Jabatan</label>
-                        <input type="text" name="jabatan" required="required" class="form-control" placeholder="Jabatan">
+                        <input type="text" name="email" required="required" class="form-control" placeholder="Email">
                     </div>
 
                     <div class="form-group">
