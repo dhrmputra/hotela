@@ -63,7 +63,7 @@ const handlePhoneChange = (value, country) => {
                                     type="text"
                                     name="nama"
                                     placeholder="Masukan Nama"
-                                    className="mt-1 border border-amber-600 p-2 rounded-md w-full text-zinc-600 dark:text-zinc-200"
+                                    className="mt-1 border border-amber-600 p-2 rounded-md w-full text-zinc-200 dark:text-zinc-200 placeholder:text-neutral-400 focus:outline-none"
                                     required
                                 />
                             </div>
@@ -74,7 +74,7 @@ const handlePhoneChange = (value, country) => {
                                     type="email"
                                     name="email"
                                     placeholder="Masukan Email"
-                                    className="mt-1 border border-amber-600 p-2 rounded-md w-full text-zinc-600 dark:text-zinc-200"
+                                    className="mt-1 border border-amber-600 p-2 rounded-md w-full text-zinc-200 dark:text-zinc-200 placeholder:text-neutral-400 focus:outline-none"
                                     required
                                 />
                             </div>
@@ -94,7 +94,7 @@ const handlePhoneChange = (value, country) => {
                                 />
 
                                 {/* hidden input supaya tetap terkirim ke formsubmit */}
-                                <input type="hidden" name="number" value={phone} />
+                                <input type="hidden" name="number" value={phone} className='placeholder:text-neutral-400 focus:outline-none' />
                             </div>
 
                             <div>
@@ -103,7 +103,7 @@ const handlePhoneChange = (value, country) => {
                                     type="text"
                                     name="subject"
                                     placeholder="Masukan Subject"
-                                    className="mt-1 border border-amber-600 p-2 rounded-md w-full text-zinc-600 dark:text-zinc-200"
+                                    className="mt-1 border border-amber-600 p-2 rounded-md w-full text-zinc-200 dark:text-zinc-200 placeholder:text-neutral-400 focus:outline-none"
                                     required
                                 />
                             </div>
@@ -114,7 +114,7 @@ const handlePhoneChange = (value, country) => {
                                     name="pesan"
                                     placeholder="Pesan"
                                     rows="5"
-                                    className="mt-1 border border-amber-600 p-2 rounded-md w-full text-zinc-600 dark:text-zinc-200"
+                                    className="mt-1 border border-amber-600 p-2 rounded-md w-full text-zinc-200 dark:text-zinc-200 placeholder:text-neutral-400 focus:outline-none"
                                     required
                                 ></textarea>
                             </div>

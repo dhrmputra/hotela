@@ -3,9 +3,9 @@ import LogoWhite from "../assets/logokejora.png";
 
 export default function Footer() {
     return (
-        <footer className="mt-28 w-full bg-white dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-700 transition-colors duration-300">
+        <footer className="mt-28 w-full bg-neutral-900 border-t border-neutral-200 dark:border-neutral-700 transition-colors duration-300">
 
-            <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10">
+            <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-4 gap-8 text-center">
 
                 {/* LOGO */}
                 <div className="flex flex-col items-center md:items-start text-center md:text-left">
@@ -14,7 +14,7 @@ export default function Footer() {
                         alt="Logo"
                         className="w-32 mb-4"
                     />
-                    <p className="text-base text-neutral-600 dark:text-neutral-400">
+                    <p className="text-base text-neutral-400">
                         Jl. Danau Tamblingan, Sanur, Bali <br />
                         Tel:+62 888-09992055 <br />
                         +62 (0) 361 472 1699 Office hours <br />
@@ -23,11 +23,11 @@ export default function Footer() {
                 </div>
 
                 {/* MENU */}
-                <div className="text-center md:text-left">
-                    <h1 className="text-xl font-semibold mb-4 text-neutral-800 dark:text-white">
+                <div className="text-center">
+                    <h1 className="text-xl font-semibold mb-4 text-white">
                         Menu
                     </h1>
-                    <ul className="space-y-2 text-neutral-600 dark:text-neutral-400 ">
+                    <ul className="space-y-2 text-neutral-600 dark:text-neutral-400">
                         <li><a href="#hero" className="text-white font-semibold hover:text-amber-600">Home</a></li>
                         <li><a href="#about" className="text-white font-semibold hover:text-amber-600">About</a></li>
                         <li><a href="#rooms" className="text-white font-semibold hover:text-amber-600">Rooms</a></li>
@@ -36,11 +36,11 @@ export default function Footer() {
                 </div>
 
                 {/* SOCIAL */}
-                <div className="text-center md:text-left">
-                    <h1 className="text-xl font-semibold mb-4 text-neutral-800 dark:text-white">
+                <div className="text-center">
+                    <h1 className="text-xl font-semibold mb-4 text-white">
                         Follow Us
                     </h1>
-                    <div className="flex justify-center md:justify-start gap-5 text-3xl text-neutral-600 dark:text-neutral-400">
+                    <div className="flex justify-center gap-5 text-3xl text-neutral-600 dark:text-neutral-400">
                         <a href="https://github.com/dhrmputra" target="_blank" rel="noopener noreferrer" className="nav-link">
                             <i className="ri-github-fill"></i>
                         </a>
@@ -53,6 +53,17 @@ export default function Footer() {
                         <a href="https://wa.me/628993102710" target="_blank" rel="noopener noreferrer" className="nav-link">
                             <i className="ri-whatsapp-fill"></i>
                         </a>
+                    </div>
+                </div>
+
+                <div className="text-center">
+                    <h1 className="text-xl font-semibold mb-4 text-white">
+                        Get In Touch
+                    </h1>
+                    <div className="text-center">
+                        <form action="" className="">
+                            <input type="email" placeholder="Enter Your Email" className="w-60 bg-white rounded-[20px] py-2 ps-10 " />
+                        </form>
                     </div>
                 </div>
 
